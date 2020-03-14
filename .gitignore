@@ -1,0 +1,6 @@
+# dot files: xterm and vim
+*
+
+!.gitignore
+!.Xresourses
+!.vimrc

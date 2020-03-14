@@ -1,0 +1,40 @@
+! -- Fonts -- !
+URxvt.font: xft:Hack:pixelsize=12
+URxvt.boldFont:
+
+! -- Scroll -- !
+URxvt.scrollBar: false
+
+!-- Xft settings -- !
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+
+xterm*background: #E7EAED
+!-- xterm*foreground: #2E3436 --!
+xterm*foreground: #444
+xterm*faceName: Hack:pixelsize=13
+
+xterm*color0: #2a2a2a
+xterm*color1: #bf4040
+xterm*color2: #00a8a8
+xterm*color3: #c4a000
+xterm*color4: #002f3f
+xterm*color5: #acacac
+xterm*color6: #45afc7
+xterm*color7: #729fcf
+xterm*color8: #ffb86c
+xterm*color9: rgb:fc/54/54
+xterm*color10: rgb:54/fc/54
+xterm*color11: rgb:fc/fc/54
+xterm*color12: #25709e
+xterm*color13: rgb:fc/54/fc
+xterm*color14: rgb:54/fc/fc
+xterm*color15: rgb:fc/fc/fc
+
+xterm*cursorColor: #272b35
+xterm*highlightColor: #aeaeae
+
+xterm*scaleHeight: 1.1

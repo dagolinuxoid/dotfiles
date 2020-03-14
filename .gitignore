@@ -2,5 +2,5 @@
 *
 
 !.gitignore
-!.Xresourses
+!.Xresources
 !.vimrc

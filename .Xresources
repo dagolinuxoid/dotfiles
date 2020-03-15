@@ -23,7 +23,8 @@ xterm*color2: #00a8a8
 xterm*color3: #c4a000
 xterm*color4: #002f3f
 xterm*color5: #acacac
-xterm*color6: #45afc7
+!--xterm*color6: #45afc7
+xterm*color6: #d7d7db
 xterm*color7: #729fcf
 xterm*color8: #ffb86c
 xterm*color9: rgb:fc/54/54

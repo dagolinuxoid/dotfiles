@@ -28,7 +28,7 @@ xterm*color6: #d7d7db
 xterm*color7: #729fcf
 xterm*color8: #ffb86c
 xterm*color9: rgb:fc/54/54
-xterm*color10: rgb:54/fc/54
+xterm*color10: #66a05b
 xterm*color11: rgb:fc/fc/54
 xterm*color12: #25709e
 xterm*color13: rgb:fc/54/fc

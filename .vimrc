@@ -6,13 +6,14 @@ Plug 'preservim/nerdtree'
 Plug 'prettier/vim-prettier'
 Plug 'Yggdroot/indentLine'
 Plug 'galooshi/vim-import-js'
-Plug 'jlanzarotta/bufexplorer'
 Plug 'tpope/vim-commentary'
 Plug 'Valloric/MatchTagAlways'
 Plug 'markonm/traces.vim' 
 call plug#end()
 
 set laststatus=2
+
+set title
 
 " MathchTagAlways
 let g:mta_filetypes = {
@@ -29,29 +30,12 @@ let g:indentLine_faster = 1
 "let g:indentLine_char = '⎸'
 let g:indentLine_char = '┆'
 
-" autocmd vimenter * NERDTree
-" let g:NERDTreeDirArrowExpandable = '►'
-" let g:NERDTreeDirArrowCollapsible = '▼'
 let NERDTreeMinimalUI = 1
 let g:NERDTreeNodeDelimiter="\u00a0"
 nnoremap <silent> <Leader>t :NERDTreeToggle<CR>
 
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.json,*.scss,*.css,*.html PrettierAsync
-
-" folding
-" set foldmethod=manual
-" set foldcolumn=1
-
-"set foldmethod=syntax
-"let javaScript_fold=1
-"set foldlevelstart=99
-
-" set foldmethod=indent
-" set nofoldenable
-
-" set foldnestmax=10
-" set foldlevel=2
 
 syntax off
 

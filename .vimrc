@@ -3,45 +3,62 @@ Plug 'prettier/vim-prettier', {'do': 'npm i', 'tag': '*'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
 Plug 'Valloric/MatchTagAlways'
-Plug 'markonm/traces.vim' 
-Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
+Plug 'arcticicestudio/nord-vim', {'branch': 'develop'}
+Plug 'tpope/vim-commentary'
 Plug 'galooshi/vim-import-js'
-Plug 'arcticicestudio/nord-vim'
+Plug 'markonm/traces.vim' 
 call plug#end()
 
+" set Vim-specific sequences for RGB colors | set true colors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
+
+" customize indentline
+let g:indentLine_color_gui = "#4c566a"
+let g:indentLine_faster = 1
+let g:indentLine_char = '┆'
+
+" fix issue for .json files
+let g:vim_json_conceal = 0
+
 colorscheme nord
-let g:indentLine_color_term = 8
+
+" custom theming settings for xterm
+if $TERM == 'xterm'
+  colorscheme default
+  syntax off
+endif
+
+" enable the ability to use mouse in vim
+set mouse=a ttymouse=xterm2
 
 " Block in normal, line in insert, underline in replace
 let &t_SI="\e[5 q" | let &t_EI="\e[1 q" | let &t_SR="\e[3 q"
+set timeout timeoutlen=1000 ttimeoutlen=0
 
+" obvious things
 set laststatus=2 title hlsearch number relativenumber showcmd
 
 " MathchTagAlways
-let g:mta_filetypes = {'html' : 1,'javascriptreact' : 1}
+let g:mta_filetypes = {'html' : 1,'javascriptreact' : 1, 'javascript': 1}
 
-" IndentLine plugin
-let g:indentLine_faster = 1
-let g:indentLine_char = '┆'
-" let g:indentLine_char = '⎸'
-
+" Nerdtree settings
 let NERDTreeMinimalUI = 1
-" let g:NERDTreeNodeDelimiter="\u00a0"
+let g:NERDTreeNodeDelimiter="\u00a0"
 nnoremap <silent> <leader>t :NERDTreeToggle<CR>
 
+" Prettier settings | vim-prettier
 let g:pretteir#exec_cmd_path = "/home/linux/.vim/plugged/vim-prettier/node_modules/.bin/prettier"
 autocmd BufWritePre *.js,*.jsx,*.json,*.scss,*.css,*.html PrettierAsync
 
-" Indentation
+" the tabs and spaces thing
 set tabstop=2 shiftwidth=2 expandtab
 
-" Directory to store swap files
+" the storage path for swap files
 set dir=~/.vim/swap
 
 " Set working directory to current file.
-" This autocmd changes the window-local current directory to
-" be the same as the directory of the current file 
+" Changes the window-local current directory to be the same as the directory of the current file 
 autocmd BufEnter * silent! lcd %:p:h
-
-set mouse=n ttymouse=xterm2

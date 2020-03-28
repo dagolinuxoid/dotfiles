@@ -1,10 +1,10 @@
 call plug#begin('~/.vim/plugged')
 Plug 'prettier/vim-prettier', {'do': 'npm i', 'tag': '*'}
+Plug 'preservim/nerdtree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
 Plug 'Valloric/MatchTagAlways'
-Plug 'preservim/nerdtree'
-Plug 'arcticicestudio/nord-vim', {'branch': 'develop'}
+Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-commentary'
 Plug 'galooshi/vim-import-js'
 Plug 'markonm/traces.vim' 
@@ -23,15 +23,10 @@ let g:indentLine_char = '┆'
 " fix issue for .json files
 let g:vim_json_conceal = 0
 
+" current theme
 colorscheme nord
 
-" custom theming settings for xterm
-if $TERM == 'xterm'
-  colorscheme default
-  syntax off
-endif
-
-" enable the ability to use mouse in vim
+" enable mouse in vim
 set mouse=a ttymouse=xterm2
 
 " Block in normal, line in insert, underline in replace

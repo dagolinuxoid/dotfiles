@@ -8,6 +8,9 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-commentary'
 Plug 'galooshi/vim-import-js'
 Plug 'markonm/traces.vim' 
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 " set Vim-specific sequences for RGB colors | set true colors
@@ -57,3 +60,10 @@ set dir=~/.vim/swap
 " Set working directory to current file.
 " Changes the window-local current directory to be the same as the directory of the current file 
 autocmd BufEnter * silent! lcd %:p:h
+
+" vim-gitgutter
+set updatetime=100
+set signcolumn=yes
+
+" Get rid of the default mode indicator | vim-airline
+set noshowmode

@@ -5,15 +5,15 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
 Plug 'Valloric/MatchTagAlways'
 Plug 'arcticicestudio/nord-vim'
-Plug 'tpope/vim-commentary'
-Plug 'galooshi/vim-import-js'
 Plug 'markonm/traces.vim' 
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
+Plug 'galooshi/vim-import-js'
 call plug#end()
 
-" set Vim-specific sequences for RGB colors | set true colors
+" set Vim-specific sequences for RGB colors | enable true colors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
@@ -64,6 +64,30 @@ autocmd BufEnter * silent! lcd %:p:h
 " vim-gitgutter
 set updatetime=100
 set signcolumn=yes
+let g:gitgutter_sign_added='┃'
+let g:gitgutter_sign_modified='┃'
+let g:gitgutter_sign_removed='┃'
+
+" airline
+let g:airline#extensions#hunks#enabled = 0
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.branch = '⎇'
+" let g:airline_symbols.dirty='⚡'
+let g:airline_symbols.dirty= ''
+let g:airline_symbols.notexists = ''
 
 " Get rid of the default mode indicator | vim-airline
 set noshowmode
+
+" Check automatically if the file has changed externally
+set autoread
+if ! exists("g:CheckUpdateStarted")
+  let g:CheckUpdateStarted=1
+  call timer_start(1,'CheckUpdate')
+endif
+function! CheckUpdate(timer)
+  silent! checktime
+  call timer_start(1000,'CheckUpdate')
+endfunction
